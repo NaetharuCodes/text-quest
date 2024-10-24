@@ -1,0 +1,37 @@
+.container {
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 64px;
+  background-color: orange;
+}
+
+.sidebar {
+  width: 256px;
+  background-color: orangered;
+  height: 100vh;
+  position: fixed;
+  left: -256px;
+  transition: 0.2s ease-in-out;
+}
+
+.sidebarOpen {
+  left: 0;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.footer {
+  height: 64px;
+  background-color: orange;
+}
+
+.button {
+  padding: 10px;
+}
