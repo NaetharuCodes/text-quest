@@ -1,0 +1,15 @@
+.container {
+  width: 680px;
+  height: 800px;
+  padding: 16px;
+  background-color: black;
+  text-align: justify;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  overflow: auto;
+}
+
+.text {
+  color: var(--ghost-white);
+  margin: 32px 0;
+}

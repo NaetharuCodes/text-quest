@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./AppShell.module.css";
 import StandardButton from "../StandardButton/StandardButton";
 import Toggle from "../Toggle/Toggle";
-import { SunIcon } from "@/icons/sunIcon";
+import { SunIcon } from "@/icons/SunIcon";
 import { MoonIcon } from "@/icons/MoonIcon";
 
 interface AppShellProps {
@@ -11,6 +11,19 @@ interface AppShellProps {
 
 const AppShell = ({ children }: AppShellProps) => {
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(true);
+
+  const handleToggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }, [darkMode]);
 
   const handleToggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -57,8 +70,8 @@ const AppShell = ({ children }: AppShellProps) => {
           <Toggle
             leftIcon={SunIcon}
             rightIcon={MoonIcon}
-            on={true}
-            onClick={() => {}}
+            on={darkMode}
+            onClick={handleToggleDarkMode}
           />
         </div>
       </div>

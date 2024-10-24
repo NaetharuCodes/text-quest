@@ -1,13 +1,18 @@
 .container {
   min-height: 100vh;
-  background-color: var(--night);
+
+  background-color: var(--ghost-white);
   display: flex;
   flex-direction: column;
 }
 
+:global(body.dark-mode) .container {
+  background-color: var(--night);
+}
+
 .header {
   height: 64px;
-  background-color: var(--dim-gray);
+  background-color: var(--ash-gray);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,9 +20,13 @@
   padding-right: 16px;
 }
 
+:global(body.dark-mode) .header {
+  background-color: var(--dim-gray);
+}
+
 .sidebar {
   width: 256px;
-  background-color: var(--dim-gray);
+  background-color: var(--ash-gray);
   height: calc(100vh - 64px);
   position: fixed;
   left: -256px;
@@ -26,6 +35,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+:global(body.dark-mode) .sidebar {
+  background-color: var(--dim-gray);
 }
 
 .sidebarOpen {
@@ -39,12 +52,17 @@
 .footer {
   height: 64px;
   background-color: var(--dim-gray);
+  color: var(--night);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-family: sans-serif;
-  opacity: 25%;
+  opacity: 65%;
+}
+
+:global(body.dark-mode) .footer {
+  color: var(--ghost-white);
 }
 
 .sidebarButton {
@@ -54,6 +72,10 @@
   border-right: 2px solid var(--ghost-white);
   outline: none;
   background-color: var(--ash-gray);
+}
+
+:global(body.dark-mode) .sidebarButton {
+  background-color: var(--dim-gray);
 }
 
 .headerText {

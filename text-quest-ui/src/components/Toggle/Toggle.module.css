@@ -25,17 +25,19 @@
   border-radius: 50%;
   position: absolute;
   top: 25%;
+  transition: 0.2s ease-in-out;
 }
 
 .sliderButtonOff {
-  left: 6px;
+  transform: translateX(6px);
 }
 
 .sliderButtonOn {
-  right: 6px;
+  transform: translateX(30px);
 }
 
 .fade {
+  transition: 0.2s ease-in-out;
   opacity: 25%;
 }
 
