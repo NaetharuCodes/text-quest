@@ -13,7 +13,11 @@ const AppShell = ({ children }: AppShellProps) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      id="main-appshell"
+      data-testid="main-appshell"
+    >
       <header className={styles.header} id="main-header">
         <button className={styles.button} onClick={handleToggleSidebar}>
           Toggle
