@@ -1,0 +1,22 @@
+.button {
+    min-height: 64px;
+    min-width: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+
+.iconContainer {
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    padding: 16px;
+    background-color: var(--ghost-white);
+}
+
+.text {
+    color: var(--ghost-white);
+    margin-left: 8px;
+}
