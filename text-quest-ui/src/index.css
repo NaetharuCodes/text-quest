@@ -2,7 +2,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: var(--night);
+  font-family: sans-serif;
 }
 
-/* :root {
-} */
+:root {
+  --night: #0c120c;
+  --engineering-orange: #c20114;
+  --dim-gray: #6d7275;
+  --ash-gray: #c7d6d5;
+  --ghost-white: #ecebf3;
+}
