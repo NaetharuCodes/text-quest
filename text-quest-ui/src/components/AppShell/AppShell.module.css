@@ -30,7 +30,7 @@
   height: calc(100vh - 64px);
   position: fixed;
   left: -256px;
-  transition: 0.2s ease-in-out;
+  transition: left 0.08s ease-in-out;
   border-right: 2px solid var(--ghost-white);
   display: flex;
   flex-direction: column;

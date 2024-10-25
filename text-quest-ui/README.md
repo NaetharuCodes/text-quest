@@ -1,50 +1,78 @@
-# React + TypeScript + Vite
+# Text Quest is a web based text adventure game.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Keywords
 
-Currently, two official plugins are available:
+The game interactions use keywords:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Basic Interactions
 
-## Expanding the ESLint configuration
+- "go to"
+- "look at"
+- "pick up"
+- "use"
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+For example, if you are in a room with a treasure chest in the center, then you could...
 
-- Configure the top-level `parserOptions` property like this:
+> look at Treasure Chest
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+"you see the chest in the center of the room, it looks old, and maybe filled with great riches"
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+> go to Treasure Chest
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+"you approach the chest. As you get closer you get a strange feeling and could almost swear you saw the chest flex and move"
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+> use Treasure Chest
+
+"as you reach out to touch the chest, it quivers and shifts before your eyes...this is no chest. It'a a mimic!"
+
+### Combat Interactions
+
+- "melee"
+- "flee"
+- "cast"
+- "shoot"
+
+For example...after the mimic makes itself known
+
+> melee Mimic
+
+"you swiftly draw your dagger and slash at the Mimic, which has morphed into its full natural toothy horror form. However, your slahes do little"
+
+> cast Ray of Frost
+
+"you cast the spell Ray of Frost, shooting ice from your hands. You can see the creatures skin freeze as the spell hits it"
+
+> flee
+
+"you look to flee: which exit? (1): south door, (2): east door
+
+> 1
+
+"you rush to the south door. It's still open, and you manage to slip out, and slam it behind you before the creature catches up"
+
+### Social Interactions
+
+- "speak to"
+- "charm"
+- "cower"
+- "barter"
+
+For example...you find yourself trying to gain entrace to a castle...
+
+"The guard looks tired, and his tone suggests he has little time for any nonsense"
+
+> speak to Guard
+
+"Who are you? This place is kept tight. No chance you're getting in here"
+
+> charm Guard
+
+"You do your best to sound friendly, and tell the guard that you're just looking to bring some food to your brother, whose training in the yard"
+
+> cower Guard
+
+"You puff yourself up looking as ferocious as you can manage, and attempt to intimidate the guard into letting you pass"
+
+> barter Guard
+
+"You offer the guard three coins to look the other way as you slip past into the castle"

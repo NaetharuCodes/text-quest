@@ -3,10 +3,12 @@
     flex-direction: column;
     margin: 32px;
     gap: 32px;
+    height: calc(100vh - 256px)
 }
 
 .visualContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
+    height: 70%;
 }

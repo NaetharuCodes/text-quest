@@ -17,6 +17,10 @@
 }
 
 .text {
-    color: var(--ghost-white);
+    color: black;
     margin-left: 8px;
+}
+
+:global(body.dark-mode) .text {
+    color: var(--ghost-white);
 }

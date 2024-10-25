@@ -1,9 +1,28 @@
 .container {
     width: 100%;
-    background-color: black;
-    padding: 32px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 32px;
+    background-color: rgb(200, 200, 200);
+}
+
+:global(body.dark-mode) .container {
+    background-color: transparent;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 32px;
+    width: 50%;
+    padding: 32px;
+    background-color: black
+}
+
+.inputContainer {
+    display: flex;
+    gap: 32px;
+    width: 50%;
+    padding: 32px;
+    background-color: black
 }

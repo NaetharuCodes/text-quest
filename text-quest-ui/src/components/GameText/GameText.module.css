@@ -1,6 +1,5 @@
 .container {
   flex-grow: 1;
-  height: 800px;
   padding: 16px;
   text-align: justify;
   line-height: 2rem;
