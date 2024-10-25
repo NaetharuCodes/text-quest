@@ -1,0 +1,12 @@
+.container {
+    display:flex;
+    flex-direction: column;
+    margin: 32px;
+    gap: 32px;
+}
+
+.visualContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}

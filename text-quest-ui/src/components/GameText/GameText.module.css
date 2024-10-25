@@ -1,15 +1,23 @@
 .container {
-  width: 680px;
+  flex-grow: 1;
   height: 800px;
   padding: 16px;
-  background-color: black;
   text-align: justify;
   line-height: 2rem;
   font-size: 1.2rem;
   overflow: auto;
+  background-color: rgb(200, 200, 200);
+}
+
+:global(body.dark-mode) .container {
+  background-color: black
 }
 
 .text {
-  color: var(--ghost-white);
+  color: rgb(10, 10, 10);
   margin: 32px 0;
+}
+
+:global(body.dark-mode) .text {
+  color: white;
 }

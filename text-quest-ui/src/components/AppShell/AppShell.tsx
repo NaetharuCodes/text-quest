@@ -63,7 +63,7 @@ const AppShell = ({ children }: AppShellProps) => {
           className={styles.sidebarButton}
           onClick={handleToggleSidebar}
         >
-          Open Sidebar
+          Close Sidebar
         </button>
         <div>content section</div>
         <div className={styles.toggleContainer}>
