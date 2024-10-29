@@ -8,7 +8,10 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   const authenticated = false;
 
   if (!authenticated) {
-    <Navigate to="/" replace />;
+    {
+      console.log("Lets get out of here");
+    }
+    return <Navigate to="/" replace />;
   }
 
   return children;

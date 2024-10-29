@@ -23,7 +23,6 @@ createRoot(document.getElementById("root")!).render(
               </ProtectedRoute>
             }
           />
-          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </AppShell>
     </BrowserRouter>
