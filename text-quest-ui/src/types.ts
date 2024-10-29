@@ -1,17 +1,18 @@
 export type Adventure = {
-    name: string,
-    scenes: Scene[]
-}
+  title: string;
+  description: string;
+  scenes: Scene[];
+};
 
 export type Scene = {
-    name: string,
-    text: string[],
-    poi: Poi[],
-    parents: Scene[],
-    children: Scene[],
-}
+  title: string;
+  text: string[];
+  poi: Poi[];
+  parents: Scene[];
+  children: Scene[];
+};
 
 export type Poi = {
-    name: string;
-    parent: Scene
-}
+  name: string;
+  parent: Scene;
+};

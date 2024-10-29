@@ -8,6 +8,33 @@ import AdventureMakerForm from "@/components/AdventureMakerForm/AdventureMakerFo
 const AdminPage = () => {
   const [adventure, setAdventure] = useState<Adventure | null>(null);
 
+  // Create a new adventure in the db, and then pull that data down and set it here.
+  const handleCreateAdventure = async (e: Adventure) => {
+    try {
+      const response = await fetch("http://localhost:3000/api/adventures", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json", // Add this line
+        },
+        body: JSON.stringify({
+          title: e.title,
+          description: e.description,
+          scenes: [],
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Response Status: ${response.status}`);
+      }
+
+      const json = await response.json();
+
+      console.log(json);
+    } catch (error) {
+      console.error("Unable to create new adventure: ", error);
+    }
+  };
+
   return (
     <div
       style={{
@@ -41,7 +68,7 @@ const AdminPage = () => {
           <SceneMakerForm />
         ) : (
           <AdventureMakerForm
-            setAdventure={(e: Adventure) => setAdventure(e)}
+            createAdventure={(e: Adventure) => handleCreateAdventure(e)}
           />
         )}
       </div>
