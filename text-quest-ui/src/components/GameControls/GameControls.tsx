@@ -15,10 +15,10 @@ const GameControls = () => {
         <GameInput />
       </div>
       <div className={styles.buttonContainer}>
-        <GameButton icon={SunIcon} onClick={() => {}} text="Option 1" />
-        <GameButton icon={MoonIcon} onClick={() => {}} text="Option 2" />
-        <GameButton icon={SparkIcon} onClick={() => {}} text="Option 3" />
-        <GameButton icon={RuneIcon} onClick={() => {}} text="Option 4" />
+        <GameButton icon={SunIcon} onClick={() => {}} text="Items" />
+        <GameButton icon={MoonIcon} onClick={() => {}} text="Rest" />
+        <GameButton icon={SparkIcon} onClick={() => {}} text="Magic" />
+        <GameButton icon={RuneIcon} onClick={() => {}} text="Options" />
       </div>
     </div>
   );
