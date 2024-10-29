@@ -44,3 +44,11 @@ Text Quest supports a range of player interaction types
 ### Magic
 
 - Cast [spell]
+
+## Scene Tree
+
+An adventure is composed of scenes, which are linked together as nodes in a tree. Each scene has at least one parent (save for the first) and at least one child (save for the endings). When arriving in a scene players are given a text readout about it. They are then able to use the text input to interact with the scene by investigating points of interest, and engaging with characters and items found therein.
+
+## Dialogue Tree
+
+Character dialogues are modelled on a tree, with each character response a node, and player interactions used to navigate between nodes to one of the outcome points.
