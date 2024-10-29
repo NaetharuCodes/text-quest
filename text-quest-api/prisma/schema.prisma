@@ -1,0 +1,136 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum InteractionType {
+  // Investigation
+  INVESTIGATE
+  SEARCH
+  READ
+  LISTEN
+
+  // Physical
+  TAKE
+  USE
+  PUSH_PULL
+  OPEN_CLOSE
+  CLIMB
+  BREAK
+
+  // Social
+  SPEAK
+  TRADE
+  GIVE
+  THREATEN
+  STEAL
+
+  // Magic
+  CAST_SPELL
+
+  // Special
+  HIDE
+  COMBINE
+}
+
+enum CreatureType {
+  HUMANOID
+  BEAST
+  UNDEAD
+  DEMON
+  ELEMENTAL
+  CONSTRUCT
+  DRAGON
+  FAE
+}
+
+enum SpellSchool {
+  TIME
+  SPACE
+  MIND
+  MATTER
+}
+
+model Adventure {
+  id          String      @id @default(uuid())
+  title       String
+  description String
+  scenes      Scene[]
+  creatures   Creature[]
+  characters  Character[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Scene {
+  id               String            @id @default(uuid())
+  title            String
+  description      String
+  adventure        Adventure         @relation(fields: [adventureId], references: [id])
+  adventureId      String
+  pointsOfInterest PointOfInterest[]
+  creatures        Creature[]
+  characters       Character[]
+
+  childScenes  Scene[] @relation("SceneConnections")
+  parentScenes Scene[] @relation("SceneConnections")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PointOfInterest {
+  id              String          @id @default(uuid())
+  title           String
+  description     String
+  interactionType InteractionType
+  itemData        Json?
+  dialogueData    Json?
+  spellData       Json?
+  scene           Scene           @relation(fields: [sceneId], references: [id])
+  sceneId         String
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+model Spell {
+  id          String      @id @default(uuid())
+  name        String      @unique
+  description String
+  school      SpellSchool
+  level       Int
+  effect      String
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Character {
+  id          String    @id @default(uuid())
+  name        String
+  description String
+  adventure   Adventure @relation(fields: [adventureId], references: [id])
+  adventureId String
+  scenes      Scene[]
+  dialogue    Json?
+  inventory   Json?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Creature {
+  id          String       @id @default(uuid())
+  name        String
+  description String
+  type        CreatureType
+  adventure   Adventure    @relation(fields: [adventureId], references: [id])
+  adventureId String
+  scenes      Scene[]
+  stats       Json
+  drops       Json?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
