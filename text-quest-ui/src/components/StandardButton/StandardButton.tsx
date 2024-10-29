@@ -2,7 +2,7 @@ import styles from "./StandardButton.module.css";
 
 interface StandardButtonProps {
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
   type: "button" | "reset" | "submit";
   btnType: "primary" | "secondary" | "alert" | "warning";
 }
