@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: var(--night);
+  color: var(--ghost-white);
   font-family: "Pixelify Sans", sans-serif;
   font-size: 16pt;
 }
@@ -10,6 +10,12 @@
 button {
   cursor: pointer;
 }
+
+input, textarea {
+  background-color: var(--night);
+  padding: 8px;
+}
+
 
 :root {
   --night: #0c120c;

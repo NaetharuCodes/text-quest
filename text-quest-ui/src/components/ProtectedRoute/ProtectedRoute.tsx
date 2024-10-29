@@ -5,7 +5,7 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-  const authenticated = false;
+  const authenticated = true;
 
   if (!authenticated) {
     {

@@ -1,0 +1,23 @@
+.form {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.sceneName, .sceneText {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.sceneText > textarea {
+    resize: none;
+    height: 400px;
+    overflow: auto;
+}
+
+.button {
+    background-color: black;
+    padding: 8px;
+}
